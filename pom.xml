@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <groupId>com.fintonic</groupId>
+    <artifactId>versioning-spring-boot-parent</artifactId>
+    <version>0.6.0.RELEASE</version>
+    <packaging>pom</packaging>
+    <name>versioning-spring-boot-parent</name>
+    <description>Spring boot starter using for versioning rest.</description>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Rafael Ríos Moya</name>
+            <email>ganchix@gmail.com</email>
+            <organization>Fintonic</organization>
+            <organizationUrl>http://www.fintonic.com</organizationUrl>
+        </developer>
+    </developers>
+
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring.boot.version>1.4.3.RELEASE</spring.boot.version>
+    </properties>
+
+
+	<modules>
+		<module>versioning-spring-boot</module>
+		<module>versioning-spring-boot-starter</module>
+
+	</modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
