@@ -4,7 +4,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>versioning-spring-boot-starter</artifactId>
-    <version>0.6.0.RELEASE</version>
     <packaging>jar</packaging>
     <name>versioning-spring-boot-starter</name>
     <description>Spring boot starter using for versioning rest.</description>
