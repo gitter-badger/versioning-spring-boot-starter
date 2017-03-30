@@ -32,6 +32,12 @@
             <organization>Fintonic</organization>
             <organizationUrl>http://www.fintonic.com</organizationUrl>
         </developer>
+        <developer>
+            <name>Roberto Ansuini</name>
+            <email>roberto@fintonic.com</email>
+            <organization>Fintonic</organization>
+            <organizationUrl>http://www.fintonic.com</organizationUrl>
+        </developer> 
     </developers>
 
 
