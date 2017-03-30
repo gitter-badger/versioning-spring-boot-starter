@@ -1,5 +1,11 @@
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
 install:
 - mvn clean install
+notifications:
+  hipchat:
+    matrix:
+    - 72fa55ed0b734ea539e1eb8a073aec@oss
+    rooms0:
+      secure: ATWwArBkwL87+ZOc61qcILrqFIGhHI958raFmS0mVVrWLChfoiRqIEhVxz1AYObRy+WMZE3FIicRolaZlqqqcRjH48D+P+tJ4eYfzmVUJn8OJeuCDw4jk+FMop56W7PzJbJB2zcEbrlMjvrQsZMPSwEfP0mvo+stX/plVU5mBM5DUBuXx61QR1KmGo8oA8oWl7yDhJ7GGzjX10c+dQZ5UmljJrNoeE6GbgoN0/0+N+W05h7Icox54JET6zA1unOKdVBSxmQ4SuLFTGy8gikUQNdP9ACL2qyTr/qVBHJ922JnDQVoZpK9RSNBouehev7ISgXg4ZQJC7MbuvhrVzn/6oQcPtq7NMCEqzHVxPskwG7IHqTBndg+/xCbXpRChLHA4JDXP5Thykv5zccNXL8+OmxHq1dzAgIHcnpGYlP7RRTIAg4XXSzAIDiT24jbmvFnwWkOrl+PwqYVCmeTJZr08SCVltDPGQysxkozMz1MvpZeDECY0gGcW1dvWUjwFp7LnpdmzuZNJRm0hAd1dxz4QMWoI5OucR/nyZK5EgIgty7iifJQLvRg9mi312FP7+2diJNAYE7UctNEDNf6f1Zo2UkuEooTxTsC1J5jt1dkl1DNH5Qsd4EiD9t4r47tZ2QmgDgStqc6UyFa+cg16xtMi7HdQ8/56R2h127LQClWh84=
