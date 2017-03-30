@@ -1,4 +1,4 @@
-# Spring boot starter Versioning
+# Spring boot starter Versioning [![Build Status](https://travis-ci.org/fintonic/versioning-spring-boot-starter.svg?branch=master)](https://travis-ci.org/fintonic/versioning-spring-boot-starter)
 
 Spring boot starter using for versioning rest easily.
 
