@@ -4,7 +4,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>versioning-spring-boot</artifactId>
-    <version>0.6.0.RELEASE</version>
     <packaging>jar</packaging>
     <name>versioning-spring-boot</name>
     <description>Spring boot starter using for versioning rest.</description>
@@ -12,7 +11,7 @@
     <parent>
         <groupId>com.fintonic</groupId>
         <artifactId>versioning-spring-boot-parent</artifactId>
-        <version>0.5.0.RELEASE</version>
+        <version>0.6.0.RELEASE</version>
     </parent>
     <dependencies>
         <dependency>
