@@ -120,7 +120,7 @@
                     <execution>
                         <configuration>
                             <gpgArguments>
-                                <arg>-B</arg>
+                                <arg>--batch</arg>
                             </gpgArguments>
                         </configuration>
                         <id>sign-artifacts</id>
