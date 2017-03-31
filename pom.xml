@@ -120,7 +120,6 @@
                     <execution>
                         <configuration>
                             <gpgArguments>
-                                <arg>--batch</arg>
                                 <arg>--yes</arg>
                             </gpgArguments>
                         </configuration>
