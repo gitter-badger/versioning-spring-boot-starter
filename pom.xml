@@ -37,7 +37,7 @@
             <email>roberto@fintonic.com</email>
             <organization>Fintonic</organization>
             <organizationUrl>http://www.fintonic.com</organizationUrl>
-        </developer> 
+        </developer>
     </developers>
 
 
@@ -47,11 +47,11 @@
     </properties>
 
 
-	<modules>
-		<module>versioning-spring-boot</module>
-		<module>versioning-spring-boot-starter</module>
+    <modules>
+        <module>versioning-spring-boot</module>
+        <module>versioning-spring-boot-starter</module>
 
-	</modules>
+    </modules>
 
     <distributionManagement>
         <snapshotRepository>
@@ -80,10 +80,10 @@
                 <artifactId>nexus-staging-maven-plugin</artifactId>
                 <version>1.6.9</version>
                 <extensions>true</extensions>
-                    <configuration>
-                        <serverId>ossrh</serverId>
-                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
             <plugin>
@@ -113,18 +113,24 @@
                 </executions>
             </plugin>
             <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-gpg-plugin</artifactId>
-              <version>1.6</version>
-              <executions>
-                <execution>
-                  <id>sign-artifacts</id>
-                  <phase>verify</phase>
-                  <goals>
-                    <goal>sign</goal>
-                  </goals>
-                </execution>
-              </executions>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <gpgArguments>
+                                <arg>-B</arg>
+                            </gpgArguments>
+                        </configuration>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
             </plugin>
         </plugins>
     </build>
