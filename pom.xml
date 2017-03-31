@@ -118,11 +118,6 @@
                 <version>1.6</version>
                 <executions>
                     <execution>
-                        <configuration>
-                            <gpgArguments>
-                                <arg>--yes</arg>
-                            </gpgArguments>
-                        </configuration>
                         <id>sign-artifacts</id>
                         <phase>verify</phase>
                         <goals>
