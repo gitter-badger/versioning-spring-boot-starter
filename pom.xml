@@ -121,6 +121,7 @@
                         <configuration>
                             <gpgArguments>
                                 <arg>--batch</arg>
+                                <arg>--yes</arg>
                             </gpgArguments>
                         </configuration>
                         <id>sign-artifacts</id>
