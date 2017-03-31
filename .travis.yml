@@ -1,11 +1,29 @@
 language: java
 jdk:
-- oraclejdk8
+  - oraclejdk8
 install:
-- mvn clean install
+  - mvn --settings .travis/settings.xml install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip  -B -V
+before_install:
+  - if [ ! -z "$GPG_SECRET_KEYS" ]; then echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import; fi
+  - if [ ! -z "$GPG_OWNERTRUST" ]; then echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust; fi
+deploy:
+- 
+  provider: script
+  script: .travis/deploy.sh
+  skip_cleanup: true
+  on:
+    repo: fintonic/versioning-spring-boot-starter
+    branch: master
+    jdk: oraclejdk8
+- 
+  provider: script
+  script: .travis/deploy.sh
+  skip_cleanup: true
+  on:
+    repo: fintonic/versioning-spring-boot-starter
+    tags: true
+    jdk: oraclejdk8
 notifications:
   hipchat:
-    matrix:
-    - 72fa55ed0b734ea539e1eb8a073aec@oss
     rooms:
-      secure: ATWwArBkwL87+ZOc61qcILrqFIGhHI958raFmS0mVVrWLChfoiRqIEhVxz1AYObRy+WMZE3FIicRolaZlqqqcRjH48D+P+tJ4eYfzmVUJn8OJeuCDw4jk+FMop56W7PzJbJB2zcEbrlMjvrQsZMPSwEfP0mvo+stX/plVU5mBM5DUBuXx61QR1KmGo8oA8oWl7yDhJ7GGzjX10c+dQZ5UmljJrNoeE6GbgoN0/0+N+W05h7Icox54JET6zA1unOKdVBSxmQ4SuLFTGy8gikUQNdP9ACL2qyTr/qVBHJ922JnDQVoZpK9RSNBouehev7ISgXg4ZQJC7MbuvhrVzn/6oQcPtq7NMCEqzHVxPskwG7IHqTBndg+/xCbXpRChLHA4JDXP5Thykv5zccNXL8+OmxHq1dzAgIHcnpGYlP7RRTIAg4XXSzAIDiT24jbmvFnwWkOrl+PwqYVCmeTJZr08SCVltDPGQysxkozMz1MvpZeDECY0gGcW1dvWUjwFp7LnpdmzuZNJRm0hAd1dxz4QMWoI5OucR/nyZK5EgIgty7iifJQLvRg9mi312FP7+2diJNAYE7UctNEDNf6f1Zo2UkuEooTxTsC1J5jt1dkl1DNH5Qsd4EiD9t4r47tZ2QmgDgStqc6UyFa+cg16xtMi7HdQ8/56R2h127LQClWh84=
+      secure: PIuADhuki5sWCpgefeoJvMBXv0BBblOZ2MztsjMkwL+nrpH9kIGvAlOWZJaUWkwZYNBUCgJEsR7n8gzGhdFahiKChfDnOrGrFzb4WP1fqwvTZ7rndfBoeSVcdazfGQvFOh1DO1pm1ywMpb4iHoX/jipVyUhDRPFLaHCDY/wUTUANGD8feN+OkNSFA7bNp4q4FM7UKO3tAZOG3aKlpEs6sirvykGag/Guc8KeDTnpYfk1LVuK3xWOXuZq+5Phj9JZbvj+WglWQ0t03FAASFFVDyspGwh/0h5VdCqiqtnzxmpgYq58Q0fB5nXAMATpcaEdrckQaRvETe1mkC1D2fPbQHWLSV3hfX2uKiCNv6602pH0u7zduaJvaWfdERIYwaqAWzrc2Iso3kR0s7PUvskTShceGMPXPLOZr5BmYUVA97QT4K/O9/zavLR/2/4WClbNzNibip1AiO1aSe9jyC2qCl7AYnQA4y9W+2A1QZa1RQKqlERaRM0ab51zRFIXaIlU2I0kFp6xPoXVmpk0RXI9I6eju/Vtek0xbW+Pu0lg7W0tEhNfzz0PElgi0ERsh1NskH0XcYQLyT73qJRokcHaLEkcod3iUCJMLuVzwQM26kjxJ2k7wxIuNCKLpszHG3+kOzo72ztWHK0Op09Df0dSFvEeP+dXS1Q90vdWn0U/QtA=
