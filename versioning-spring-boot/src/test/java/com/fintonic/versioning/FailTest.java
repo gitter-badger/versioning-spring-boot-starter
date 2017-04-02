@@ -1,8 +1,8 @@
-package com.fintonic.versioning.tests;
+package com.fintonic.versioning;
 
-import com.fintonic.versioning.tests.context.error.accept.SpringApplicationAcceptFailTest;
-import com.fintonic.versioning.tests.context.error.from.SpringApplicationFromFailTest;
-import com.fintonic.versioning.tests.context.error.collision.SpringApplicationCollisionFailTest;
+import com.fintonic.versioning.context.error.accept.SpringApplicationAcceptFailTest;
+import com.fintonic.versioning.context.error.collision.SpringApplicationCollisionFailTest;
+import com.fintonic.versioning.context.error.from.SpringApplicationFromFailTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext;
