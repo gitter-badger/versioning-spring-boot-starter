@@ -1,4 +1,4 @@
-package com.fintonic.versioning.tests;
+package com.fintonic.versioning;
 
 import com.fintonic.versioning.domain.VersionRange;
 import org.junit.Test;
