@@ -1,6 +1,6 @@
-package com.fintonic.versioning.tests;
+package com.fintonic.versioning;
 
-import com.fintonic.versioning.tests.context.normal.SpringApplicationTest;
+import com.fintonic.versioning.context.normal.SpringApplicationTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class IntegrationTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testSeveralApiVersion_ShouldReturnDistinctResultPerVersionPerAutoconfiguration() throws Exception {
+    public void testSeveralApiVersion_ShouldReturnDistinctResultPerVersion() throws Exception {
 
 
         MvcResult result = mockMvc.perform(get(url).accept("application/vnd.app.resource-v1.0+json"))
@@ -55,5 +55,18 @@ public class IntegrationTest {
 
 
     }
+
+    @Test
+    public void testInfiniteApiVersion_ShouldReturnTheLastApiVersion() throws Exception {
+
+
+        MvcResult result = mockMvc.perform(get(url).accept("application/vnd.app.resource-v50.0+json"))
+                .andExpect(status().isOk())
+                .andReturn();
+        assertThat(result.getResponse().getContentAsString(), is("version-6-Infinite"));
+
+
+    }
+
 
 }
