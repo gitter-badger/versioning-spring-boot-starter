@@ -10,7 +10,8 @@
     <packaging>pom</packaging>
     <name>versioning-spring-boot-parent</name>
     <description>Spring boot starter using for versioning rest.</description>
-
+    <url>https://github.com/fintonic/versioning-spring-boot-starter</url>
+    
     <licenses>
         <license>
             <name>MIT License</name>
