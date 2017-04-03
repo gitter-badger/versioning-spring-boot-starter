@@ -6,7 +6,7 @@
 
     <groupId>com.fintonic</groupId>
     <artifactId>versioning-spring-boot-parent</artifactId>
-    <version>0.6.0.RELEASE</version>
+    <version>0.6.0.SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>versioning-spring-boot-parent</name>
     <description>Spring boot starter using for versioning rest.</description>
